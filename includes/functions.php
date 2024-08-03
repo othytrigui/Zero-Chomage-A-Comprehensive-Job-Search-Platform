@@ -1,6 +1,6 @@
 <?php
 
-$website_url = "http://localhost/myproject2/";
+$website_url = "http://localhost/zero-chomage/";
 session_start();
 
 include "db.php";
@@ -463,7 +463,7 @@ function UploadCV() {
         } else {
             if(!empty($cv)) {
                 move_uploaded_file($temp_cv, $folder);
-                $query = "UPDATE candidat_infos SET cv = '$cv' WHERE candidat_id = ".$_SESSION['user']['id'];
+                $query = 'UPDATE candidat_infos SET cv = "'.$cv.'" WHERE candidat_id = '.$_SESSION['user']['id'];
                 mysqli_query($conn, $query);
                 $_SESSION["success"] = "Votre cv a été téléchargé avec succès.";
             } 
